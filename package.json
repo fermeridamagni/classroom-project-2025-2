@@ -4,16 +4,17 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "formatter:check": "pnpx ultracite check",
+    "formatter:fix": "pnpx ultracite fix",
+    "formatter:doctor": "pnpx ultracite doctor"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
+    "@biomejs/biome": "2.3.8",
     "turbo": "^2.6.3",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3",
+    "ultracite": "6.3.9"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.24.0",
   "engines": {
     "node": ">=18"
   }
