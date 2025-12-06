@@ -1,4 +1,5 @@
 ---
+name: Expert-Nextjs-Developer
 description: "Expert Next.js 16 developer specializing in App Router, Server Components, Cache Components, Turbopack, and modern React patterns with TypeScript"
 model: "GPT-5"
 tools:
