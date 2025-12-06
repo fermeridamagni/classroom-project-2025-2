@@ -1,4 +1,5 @@
 ---
+name: Expert-Cpp-Software-Engineer
 description: "Provide expert C++ software engineering guidance using modern C++ and industry best practices."
 model: "Claude Sonnet 4.5"
 tools:
