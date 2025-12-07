@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "expo start --clear",
-    "android": "expo start --android",
-    "ios": "expo start --ios"
+    "android": "expo run:android",
+    "ios": "expo run:ios"
   },
   "dependencies": {
     "@expo-google-fonts/work-sans": "^0.4.2",
