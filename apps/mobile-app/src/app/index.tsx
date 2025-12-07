@@ -1,12 +1,12 @@
-import { ThemedText } from "@ui/themed-text";
-import { ThemedView } from "@ui/themed-view";
+import { ThemedSafeArea } from "@ui/themed-safearea";
+import { Text } from "react-native";
 
-export default function HomeScreen() {
+export default function Page() {
   return (
-    <ThemedView>
-      <ThemedText className="text-red-400" type="title">
-        Welcome!
-      </ThemedText>
-    </ThemedView>
+    <ThemedSafeArea>
+      <Text style={{ color: "#fff", fontSize: 18 }}>
+        Hello, welcome to the mobile app!
+      </Text>
+    </ThemedSafeArea>
   );
 }
