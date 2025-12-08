@@ -1,33 +1,22 @@
 import { useTheme } from "@hooks/use-theme";
-import { cn } from "@magnidev/tailwindcss-utils";
+import { Colors } from "@lib/theme";
 import { Text, type TextProps } from "react-native";
 
-export type ThemedTextProps = TextProps & {
-  lightColor?: string;
-  darkColor?: string;
-  type?: "default" | "title" | "subtitle" | "link";
-};
+export type ThemedTextProps = TextProps & {};
 
-export function ThemedText({
-  style,
-  lightColor,
-  darkColor,
-  type = "default",
-  ...rest
-}: ThemedTextProps) {
+export function ThemedText({ style, ...props }: ThemedTextProps) {
   const theme = useTheme();
 
   return (
     <Text
-      className={cn({
-        "text-white": theme === "dark",
-        "text-black": theme === "light",
-        "font-sans text-base": type === "default",
-        "font-bold font-sans text-2xl": type === "title",
-        "font-sans text-gray-500 text-lg": type === "subtitle",
-        "font-sans text-base text-blue-600 underline": type === "link",
-      })}
-      {...rest}
+      style={[
+        {
+          color: Colors[theme].text,
+          fontFamily: "WorkSans-Regular",
+        },
+        style,
+      ]}
+      {...props}
     />
   );
 }
