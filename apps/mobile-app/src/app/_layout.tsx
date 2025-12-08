@@ -1,9 +1,16 @@
-import "@assets/styles/globals.css";
 import { useFonts, WorkSans_400Regular } from "@expo-google-fonts/work-sans";
-import { Slot } from "expo-router";
+import { SessionProvider } from "@lib/auth/context";
+import { Stack } from "expo-router";
 // biome-ignore lint/performance/noNamespaceImport: This is required for the SplashScreen API
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+
+/*
+ * TODO: This is currently not working because Nativewind V5 is in PreRelease,
+ * V5 DOCS: https://www.nativewind.dev/v5/getting-started/installation
+ * Once Nativewind V5 is stable, the styles should be changed to TalwindCSS and this import should be uncommented.
+ */
+// import "@assets/styles/globals.css";
 
 SplashScreen.setOptions({
   duration: 1000,
@@ -37,5 +44,28 @@ export default function RootLayout() {
     return null;
   }
 
-  return <Slot />;
+  return (
+    <SessionProvider>
+      <Stack
+        initialRouteName="(home)"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen
+          name="(home)"
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="sign-in/index"
+          options={{
+            title: "Sign In",
+          }}
+        />
+      </Stack>
+    </SessionProvider>
+  );
 }
