@@ -1,5 +1,18 @@
+/*
+  * TODO: Currently, the implementation of Tailwind CSS with NativeWind is not working as expected.
+  * Once the issues are resolved, we can fully leverage Tailwind CSS for styling.
+*/
+
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css";
 
 @import "nativewind/theme";
+
+@layer base {
+  /* Custom global styles can be added here */
+}
+
+@layer components {
+  /* Custom component styles can be added here */
+}
