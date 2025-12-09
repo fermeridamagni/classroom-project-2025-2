@@ -13,6 +13,7 @@ export type Session = {
     id: string;
     username: string;
     name: string;
+    imageUrl?: string;
     school: {
       id: string;
       name: string;

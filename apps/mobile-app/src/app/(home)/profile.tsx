@@ -101,7 +101,19 @@ export default function Page() {
               alignSelf: "center",
               overflow: "hidden",
             }}
-          />
+          >
+            <Image
+              accessibilityLabel="Profile Picture"
+              source={{
+                uri: `${process.env.EXPO_PUBLIC_API_URL}/assets/users/${session?.user.id}/profile-picture`,
+              }}
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+              transition={1000}
+            />
+          </View>
 
           <View style={{ gap: 10 }}>
             <ThemedText
